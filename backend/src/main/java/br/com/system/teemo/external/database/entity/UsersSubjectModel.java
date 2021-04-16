@@ -7,7 +7,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(schema = "teemo", name = "user_subject")
-public class UsersSubject {
+public class UsersSubjectModel {
 
     @Column(name = "dificulty")
     private Long dificulty;
