@@ -1,16 +1,18 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { appRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
-import { TeemoComponent } from './teemo/teemo.component';
+import { TeemoModule } from './teemo/teemo.module';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    TeemoComponent
+    AppComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    appRoutingModule,
+    TeemoModule
   ],
   providers: [],
   bootstrap: [AppComponent]
