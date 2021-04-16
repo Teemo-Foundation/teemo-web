@@ -5,7 +5,6 @@ public class User {
     private String email;
     private String password;
     private String name;
-    private String institution;
 
     public long getId() {
         return id;
@@ -39,11 +38,4 @@ public class User {
         this.name = name;
     }
 
-    public String getInstitution() {
-        return institution;
-    }
-
-    public void setInstitution(String institution) {
-        this.institution = institution;
-    }
 }

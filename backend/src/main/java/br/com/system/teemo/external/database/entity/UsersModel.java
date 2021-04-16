@@ -4,12 +4,11 @@ import javax.persistence.*;
 
 @Entity
 @Table(schema = "teemo", name = "USERS")
-public class UserModel {
+public class UsersModel {
     private long id;
     private String email;
     private String password;
     private String name;
-    private String institution;
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "teemo.USERS_SEQ")
@@ -50,12 +49,4 @@ public class UserModel {
         this.name = name;
     }
 
-    @Column(name = "user_institution")
-    public String getInstitution() {
-        return institution;
-    }
-
-    public void setInstitution(String institution) {
-        this.institution = institution;
-    }
 }
