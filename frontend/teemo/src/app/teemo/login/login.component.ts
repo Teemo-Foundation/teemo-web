@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { User } from '../share/model';
 
 @Component({
@@ -8,7 +9,7 @@ import { User } from '../share/model';
 })
 export class LoginComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { this.router = router }
   user: User = new User(null, null, null);
   alertInputs: boolean = false;
 
@@ -19,6 +20,8 @@ export class LoginComponent implements OnInit {
   public SignIn(): void{
     if(this.user.email == null || this.user.password == null || this.user.email == "" || this.user.password == "")
       this.alertInputs = true;
+    else
+      this.router.navigate(['']);
   }
 
 }
