@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { appRoutingModule } from './app-routing.module';
 
@@ -12,7 +13,8 @@ import { TeemoModule } from './teemo/teemo.module';
   imports: [
     BrowserModule,
     appRoutingModule,
-    TeemoModule
+    TeemoModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

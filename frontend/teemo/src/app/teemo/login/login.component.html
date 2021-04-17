@@ -6,20 +6,27 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="form-group">
-                            <input class="form-control input" placeholder="Email">
-                            <input class="form-control input" placeholder="Password">
+                            <input class="form-control input" type="text" placeholder="Email" [(ngModel)] = "user.email">
+                            <input class="form-control input" type="text" placeholder="Password" [(ngModel)] = "user.password">
+                        </div>
+                    </div>  
+                </div>
+                <div class="row" *ngIf="alertInputs">
+                    <div class="col-md-12">
+                        <div class="alert alert-warning" role="alert">
+                            There are empty fields
                         </div>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-md-12">
                         <div class="form-group">
-                            <button class="btn btn-block" id="btn-signin">Sign in</button>
+                            <button class="btn btn-block" id="btn-signin" (click)="SignIn()">Sign in</button>
                             <a href="" class="float-left">Forgot your password?</a>
                             <a href="" class="float-right">Register </a>
                         </div>
                     </div>
-                </div>
+                </div>  
             </div>
         </div>
     </div>
