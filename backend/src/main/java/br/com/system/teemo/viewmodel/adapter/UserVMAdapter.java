@@ -11,7 +11,6 @@ public class UserVMAdapter {
         viewModel.setName(entity.getName());
         viewModel.setEmail(entity.getEmail());
         viewModel.setPassword(entity.getPassword());
-        viewModel.setInstitution(entity.getInstitution());
 
         return viewModel;
     }
@@ -22,7 +21,6 @@ public class UserVMAdapter {
         entity.setEmail(viewModel.getEmail());
         entity.setPassword(viewModel.getPassword());
         entity.setName(viewModel.getName());
-        entity.setInstitution(viewModel.getInstitution());
 
         return entity;
     }

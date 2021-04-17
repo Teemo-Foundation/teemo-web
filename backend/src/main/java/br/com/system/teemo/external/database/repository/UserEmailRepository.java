@@ -1,9 +1,9 @@
 package br.com.system.teemo.external.database.repository;
 
-import br.com.system.teemo.external.database.entity.UserModel;
+import br.com.system.teemo.external.database.entity.UsersModel;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface UserEmailRepository extends JpaRepository<UserModel, Long> {
+public interface UserEmailRepository extends JpaRepository<UsersModel, Long> {
 
-    UserModel findUserByEmail(String email);
+    UsersModel findUserByEmail(String email);
 }
