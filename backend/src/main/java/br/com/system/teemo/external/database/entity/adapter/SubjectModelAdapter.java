@@ -8,7 +8,7 @@ public class SubjectModelAdapter {
     public static Subject modelToEntity (final SubjectModel model) {
         Subject entity = new Subject();
         entity.setId(model.getId());
-        entity.setSubjectName(model.getSubjectName());
+        entity.setSubjectName(model.getName());
         entity.setUserIdFk(model.getUserIdFk());
 
         return entity;
@@ -17,7 +17,7 @@ public class SubjectModelAdapter {
     public static SubjectModel entityToModel(final Subject entity) {
         SubjectModel model = new SubjectModel();
         model.setId(entity.getId());
-        model.setSubjectName(entity.getSubjectName());
+        model.setName(entity.getSubjectName());
         model.setUserIdFk(entity.getUserIdFk());
 
         return model;

@@ -7,7 +7,7 @@ import javax.persistence.*;
 public class SubjectModel {
 
     private Long id;
-    private String subjectName;
+    private String name;
 
     @JoinColumn(name = "user_id_pk")
     private Long userIdFk;
@@ -25,12 +25,12 @@ public class SubjectModel {
     }
 
     @Column(name = "subject_name")
-    public String getSubjectName() {
-        return subjectName;
+    public String getName() {
+        return name;
     }
 
-    public void setSubjectName(String subjectName) {
-        this.subjectName = subjectName;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public Long getUserIdFk() {

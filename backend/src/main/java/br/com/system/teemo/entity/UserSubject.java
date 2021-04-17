@@ -2,9 +2,18 @@ package br.com.system.teemo.entity;
 
 public class UserSubject {
 
+    private Long id;
     private Long dificulty;
     private Long userIdFk;
     private Long subjectIdFk;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     public Long getDificulty() {
         return dificulty;

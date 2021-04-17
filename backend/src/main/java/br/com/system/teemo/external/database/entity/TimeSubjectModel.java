@@ -6,7 +6,10 @@ import javax.persistence.*;
 @Table(schema = "teemo", name = "TIME_SUBJECT")
 public class TimeSubjectModel {
 
-
+    @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "teemo.TIMESUBJECT_SEQ")
+    @SequenceGenerator(sequenceName = "teemo.TIMESUBJECT_SEQ", allocationSize = 1, name = "teemo.TIMESUBJECT_SEQ")
+    @Column(name = "time_subject_id_pk")
     private Long id;
 
     @JoinColumn(name = "subject_id_pk")
@@ -15,10 +18,6 @@ public class TimeSubjectModel {
     @JoinColumn(name = "free_time_id_pk")
     private Long freeTimeFk;
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "teemo.TIMESUBJECT_SEQ")
-    @SequenceGenerator(sequenceName = "teemo.TIMESUBJECT_SEQ", allocationSize = 1, name = "teemo.TIMESUBJECT_SEQ")
-    @Column(name = "time_subject_id_pk")
     public Long getId() {
         return id;
     }

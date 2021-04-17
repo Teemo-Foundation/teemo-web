@@ -1,13 +1,16 @@
 package br.com.system.teemo.external.database.entity;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.JoinColumn;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(schema = "teemo", name = "user_subject")
 public class UsersSubjectModel {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "teemo.USERS_SUBJECT_SEQ")
+    @SequenceGenerator(sequenceName = "teemo.USERS_SUBJECT__EQ", allocationSize = 1, name = "teemo.USERS_SUBJECT_SEQ")
+    @Column(name = "user_id_pk")
+    private Long id;
 
     @Column(name = "dificulty")
     private Long dificulty;
@@ -17,6 +20,14 @@ public class UsersSubjectModel {
 
     @JoinColumn(name = "subject_id_pk")
     private Long subjectIdFk;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     public Long getDificulty() {
         return dificulty;
