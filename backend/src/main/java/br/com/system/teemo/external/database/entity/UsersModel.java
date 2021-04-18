@@ -1,6 +1,7 @@
 package br.com.system.teemo.external.database.entity;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(schema = "teemo", name = "USERS")
@@ -9,6 +10,8 @@ public class UsersModel {
     private String email;
     private String password;
     private String name;
+
+    private List<SubjectModel> subjectModelList;
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "teemo.USERS_SEQ")
@@ -49,4 +52,12 @@ public class UsersModel {
         this.name = name;
     }
 
+    @OneToMany(mappedBy = "userIdFk")
+    public List<SubjectModel> getSubjectModelList() {
+        return subjectModelList;
+    }
+
+    public void setSubjectModelList(List<SubjectModel> subjectModelList) {
+        this.subjectModelList = subjectModelList;
+    }
 }

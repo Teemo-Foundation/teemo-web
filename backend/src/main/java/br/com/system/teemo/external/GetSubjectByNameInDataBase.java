@@ -2,6 +2,8 @@ package br.com.system.teemo.external;
 
 import br.com.system.teemo.entity.Subject;
 
+import java.util.List;
+
 public interface GetSubjectByNameInDataBase {
-    Subject execute(String name);
+    List<Subject> execute(String name);
 }

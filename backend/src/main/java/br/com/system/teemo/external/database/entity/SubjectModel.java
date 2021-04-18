@@ -9,6 +9,7 @@ public class SubjectModel {
     private Long id;
     private String name;
 
+    @ManyToOne
     @JoinColumn(name = "user_id_pk")
     private Long userIdFk;
 
