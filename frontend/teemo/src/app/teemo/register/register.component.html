@@ -1,0 +1,43 @@
+<div class="row vh-100 backgroud">
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+        <div class="row central-block">
+            <div class="col-md-12">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <input class="form-control input" type="text" placeholder="Name" [(ngModel)]="user.name">
+                            <input class="form-control input" type="text" placeholder="Email" [(ngModel)]="user.email">
+                            <input class="form-control input" type="text" placeholder="Password" [(ngModel)]="user.password">
+                            <input class="form-control input" type="text" placeholder="Confirm  Password" [(ngModel)]="confirmPassword">
+                        </div>
+                    </div>  
+                </div>
+                <div class="row" *ngIf="alertInputs">
+                    <div class="col-md-12">
+                        <div class="alert alert-warning" role="alert">
+                            There are empty fields
+                        </div>
+                    </div>
+                </div>
+                <div class="row" *ngIf="passwordEquals">
+                    <div class="col-md-12">
+                        <div class="alert alert-warning" role="alert">
+                            Passwords must be the same
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <button class="btn btn-block" id="btn-signin" (click)="SignOn()">Sign on</button>
+                            <a href="/login" class="float-left"> Cancel</a>
+                            <a href="/login" class="float-right"> I have an account</a>
+                        </div>
+                    </div>
+                </div>  
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4"></div>
+</div>
