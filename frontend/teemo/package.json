@@ -21,6 +21,7 @@
     "@angular/router": "~11.2.7",
     "@schematics/angular": "^11.2.9",
     "bootstrap": "^4.6.0",
+    "ngx-cookie-service": "^11.0.2",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
     "updated": "^2.0.2",
