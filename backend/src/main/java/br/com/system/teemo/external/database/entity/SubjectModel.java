@@ -9,9 +9,8 @@ public class SubjectModel {
     private Long id;
     private String name;
 
-    @ManyToOne
-    @JoinColumn(name = "user_id_pk")
-    private Long userIdFk;
+    @JoinColumn(name = "user_id_fk")
+    private UsersModel userIdFk;
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "teemo.SUBJECT_SEQ")
@@ -34,11 +33,11 @@ public class SubjectModel {
         this.name = name;
     }
 
-    public Long getUserIdFk() {
+    public UsersModel getUserIdFk() {
         return userIdFk;
     }
 
-    public void setUserIdFk(Long userIdFk) {
+    public void setUserIdFk(UsersModel userIdFk) {
         this.userIdFk = userIdFk;
     }
 }

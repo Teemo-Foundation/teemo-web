@@ -1,9 +1,8 @@
 package br.com.system.teemo.external.database;
 
 import br.com.system.teemo.entity.UserSubject;
-import br.com.system.teemo.external.database.entity.SubjectModel;
-import br.com.system.teemo.external.database.entity.UsersSubjectModel;
 import br.com.system.teemo.external.GetSubjectByUserIdInDataBase;
+import br.com.system.teemo.external.database.entity.UsersSubjectModel;
 import br.com.system.teemo.external.database.entity.adapter.UsersSubjectModelAdapter;
 import br.com.system.teemo.external.database.repository.UserSubjectRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,10 +20,6 @@ public class GetUserSubjectInDataBaseImpl implements GetSubjectByUserIdInDataBas
     @Override
     public List<UserSubject> execute(Long id) {
         List<UsersSubjectModel> usersSubjectModelList = userSubjectRepository.findSubjectByUserIdFk(id);
-        for (UsersSubjectModel item : usersSubjectModelList){
-            System.out.println(item.getSubjectIdFk());
-        }
-//        return UsersSubjectModelAdapter.modelToEntity(usersSubjectModelList);
-        return null;
+        return UsersSubjectModelAdapter.modelToEntity(usersSubjectModelList);
     }
 }

@@ -1,11 +1,9 @@
 package br.com.system.teemo.endpoint.rest;
 
-import br.com.system.teemo.entity.Subject;
 import br.com.system.teemo.entity.User;
 import br.com.system.teemo.entity.UserSubject;
 import br.com.system.teemo.usecase.GetUserByName;
 import br.com.system.teemo.usecase.GetUserSubject;
-import br.com.system.teemo.viewmodel.adapter.SubjectVMAdapter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -24,15 +22,13 @@ public class UserSubjectController {
     @Autowired
     private GetUserByName getUserByName;
 
-    //TODO resolver problema de adapter não receber lista
-
     @GetMapping("/{name}")
     @ResponseStatus(HttpStatus.OK)
     public ResponseEntity getUserSubject(@PathVariable final String name){
         try {
             final User user = getUserByName.execute(name);
-            final List<UserSubject> userSubject = getUserSubject.execute(user.getId());
-            return ResponseEntity.ok().body(SubjectVMAdapter.entityToViewModel(userSubject));
+            final List<UserSubject> userSubject = getUserSubject.execute(1L);
+            return ResponseEntity.ok().body(userSubject);
         }catch (Exception err){
             return ResponseEntity.badRequest().body(err.getMessage());
         }

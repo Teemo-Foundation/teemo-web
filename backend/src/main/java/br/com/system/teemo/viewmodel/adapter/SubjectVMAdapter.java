@@ -10,7 +10,7 @@ public class SubjectVMAdapter {
         final SubjectVM viewModel = new SubjectVM();
         viewModel.setId(entity.getId());
         viewModel.setSubjectName(entity.getSubjectName());
-        viewModel.setUserIdFk(entity.getUserIdFk());
+        viewModel.setUserIdFk(UserVMAdapter.entityToViewModel(entity.getUserIdFk()));
 
         return viewModel;
     }
@@ -19,7 +19,7 @@ public class SubjectVMAdapter {
         final Subject entity = new Subject();
         entity.setId(viewModel.getId());
         entity.setSubjectName(viewModel.getSubjectName());
-        entity.setUserIdFk(viewModel.getUserIdFk());
+        entity.setUserIdFk(UserVMAdapter.viewModelToEntity(viewModel.getUserIdFk()));
 
 
         return entity;

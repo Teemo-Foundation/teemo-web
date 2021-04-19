@@ -3,24 +3,32 @@ package br.com.system.teemo.external.database.entity.adapter;
 import br.com.system.teemo.entity.UserSubject;
 import br.com.system.teemo.external.database.entity.UsersSubjectModel;
 
-public class UsersSubjectModelAdapter {
-    public static UserSubject modelToEntity (final UsersSubjectModel model){
-        final UserSubject entity = new UserSubject();
-        entity.setId(model.getId());
-        entity.setDificulty(model.getDificulty());
-        entity.setSubjectIdFk(model.getSubjectIdFk());
-        entity.setUserIdFk(model.getUserIdFk());
+import java.util.ArrayList;
+import java.util.List;
 
-        return entity;
+public class UsersSubjectModelAdapter {
+    public static List<UserSubject> modelToEntity (final List<UsersSubjectModel> modelList){
+
+        List<UserSubject> userSubjectList = new ArrayList<>();
+
+        for(UsersSubjectModel item : modelList) {
+            final UserSubject entity = new UserSubject();
+            entity.setId(item.getId());
+            entity.setDificulty(item.getDificulty());
+            entity.setSubjectIdFk(SubjectModelAdapter.modelToEntity(item.getSubjectIdFk()));
+            entity.setUserIdFk(UserModelAdapter.modelToEntity(item.getUserIdFk()));
+        }
+        return userSubjectList;
     }
 
-    public static UsersSubjectModel modelToEntity (final UserSubject entity){
+    public static UsersSubjectModel entityToModel (final UserSubject entity){
         final UsersSubjectModel model = new UsersSubjectModel();
         model.setId(entity.getId());
         model.setDificulty(entity.getDificulty());
-        model.setSubjectIdFk(entity.getSubjectIdFk());
-        model.setUserIdFk(entity.getUserIdFk());
+        model.setSubjectIdFk(SubjectModelAdapter.entityToModel(entity.getSubjectIdFk()));
+        model.setUserIdFk(UserModelAdapter.entityToModel(entity.getUserIdFk()));
 
         return model;
     }
 }
+

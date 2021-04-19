@@ -1,11 +1,11 @@
-package br.com.system.teemo.entity;
+package br.com.system.teemo.viewmodel;
 
-public class UserSubject {
+public class UserSubjectVM {
 
     private Long id;
     private Long dificulty;
-    private User userIdFk;
-    private Subject subjectIdFk;
+    private UserVM userIdFk;
+    private SubjectVM subjectIdFk;
 
     public Long getId() {
         return id;
@@ -23,19 +23,19 @@ public class UserSubject {
         this.dificulty = dificulty;
     }
 
-    public User getUserIdFk() {
+    public UserVM getUserIdFk() {
         return userIdFk;
     }
 
-    public void setUserIdFk(User userIdFk) {
+    public void setUserIdFk(UserVM userIdFk) {
         this.userIdFk = userIdFk;
     }
 
-    public Subject getSubjectIdFk() {
+    public SubjectVM getSubjectIdFk() {
         return subjectIdFk;
     }
 
-    public void setSubjectIdFk(Subject subjectIdFk) {
+    public void setSubjectIdFk(SubjectVM subjectIdFk) {
         this.subjectIdFk = subjectIdFk;
     }
 }
