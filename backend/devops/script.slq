@@ -1,0 +1,83 @@
+INSERT INTO TEEMO.users values (
+    -1, 'admin', 'admin', 'admin'
+);
+
+INSERT INTO TEEMO.users values (
+    teemo.user_seq.NEXTVAL, 'Roberto', 'roberto@gmail.com', '123'
+);
+
+INSERT INTO TEEMO.users values (
+    teemo.user_seq.NEXTVAL, 'Julia', 'julia@gmail.com', '123'
+);
+
+INSERT INTO TEEMO.users values (
+    teemo.user_seq.NEXTVAL, 'Lucas', 'lucas@gmail.com', '123'
+);
+
+INSERT INTO TEEMO.subject values (
+    teemo.subject_seq.NEXTVAL, 'Matemática', -1
+);
+
+INSERT INTO TEEMO.subject values (
+    teemo.subject_seq.NEXTVAL, 'Português', -1
+);
+
+INSERT INTO TEEMO.subject values (
+    teemo.subject_seq.NEXTVAL, 'Geografia', -1
+);
+
+INSERT INTO TEEMO.subject values (
+    teemo.subject_seq.NEXTVAL, 'Inglês', -1
+);
+
+INSERT INTO TEEMO.subject values (
+    teemo.subject_seq.NEXTVAL, 'História', -1
+);
+
+INSERT INTO TEEMO.subject values (
+    teemo.subject_seq.NEXTVAL, 'POO', 4
+);
+
+INSERT INTO TEEMO.user_subject values (
+    teemo.user_subject_seq.NEXTVAL, 4, 5, 1
+);
+
+INSERT INTO TEEMO.user_subject values (
+    teemo.user_subject_seq.NEXTVAL, 2, 5, 3
+);
+
+INSERT INTO TEEMO.user_subject values (
+    teemo.user_subject_seq.NEXTVAL, 5, 5, 2
+);
+
+INSERT INTO TEEMO.user_subject values (
+    teemo.user_subject_seq.NEXTVAL, 2, 6, 6
+);
+
+INSERT INTO TEEMO.user_subject values (
+    teemo.user_subject_seq.NEXTVAL, 2, 6, 5
+);
+
+INSERT INTO TEEMO.free_time values (
+    teemo.free_time_seq.NEXTVAL, 1, 14, 6
+);
+
+INSERT INTO TEEMO.free_time values (
+    teemo.free_time_seq.NEXTVAL, 2, 16, 6
+);
+
+INSERT INTO TEEMO.free_time values (
+    teemo.free_time_seq.NEXTVAL, 2, 17, 6
+);
+
+INSERT INTO TEEMO.free_time values (
+    teemo.free_time_seq.NEXTVAL, 3, 8, 6
+);
+
+INSERT INTO TEEMO.time_subject values (
+    teemo.time_subject_seq.NEXTVAL, 5, 1
+);
+
+INSERT INTO TEEMO.time_subject values (
+    teemo.time_subject_seq.NEXTVAL, 6, 2
+);

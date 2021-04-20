@@ -51,5 +51,16 @@ create table teemo.user_subject (
     constraint subject_id_fk_user_subject foreign key (subject_id_fk) references TEEMO.subject (subject_id_pk)
 );
 
+CREATE SEQUENCE teemo.user_seq START WITH 1
+
+CREATE SEQUENCE teemo.subject_seq START WITH 1
+
+CREATE SEQUENCE teemo.free_time_seq START WITH 1
+
+CREATE SEQUENCE teemo.time_subject_seq START WITH 1
+
+CREATE SEQUENCE teemo.user_subject_seq START WITH 1
+
+
 
 
