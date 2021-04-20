@@ -1,22 +1,25 @@
 package br.com.system.teemo.external.database.entity;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(schema = "teemo", name = "TIME_SUBJECT")
 public class TimeSubjectModel {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "teemo.TIMESUBJECT_SEQ")
-    @SequenceGenerator(sequenceName = "teemo.TIMESUBJECT_SEQ", allocationSize = 1, name = "teemo.TIMESUBJECT_SEQ")
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "teemo.TIME_SUBJECT_SEQ")
+    @SequenceGenerator(sequenceName = "teemo.TIME_SUBJECT_SEQ", allocationSize = 1, name = "teemo.TIME_SUBJECT_SEQ")
     @Column(name = "time_subject_id_pk")
     private Long id;
 
-    @JoinColumn(name = "subject_id_pk")
-    private Long subjectIdFk;
+    @ManyToOne
+    @JoinColumn(name = "subject_id_fk")
+    private SubjectModel subject;
 
-    @JoinColumn(name = "free_time_id_pk")
-    private Long freeTimeFk;
+    @OneToOne
+    @JoinColumn(name = "free_time_id_fk")
+    private FreeTimeModel freeTime;
 
     public Long getId() {
         return id;
@@ -26,19 +29,19 @@ public class TimeSubjectModel {
         this.id = id;
     }
 
-    public Long getSubjectIdFk() {
-        return subjectIdFk;
+    public SubjectModel getSubject() {
+        return subject;
     }
 
-    public void setSubjectIdFk(Long subjectIdFk) {
-        this.subjectIdFk = subjectIdFk;
+    public void setSubject(SubjectModel subject) {
+        this.subject = subject;
     }
 
-    public Long getFreeTimeFk() {
-        return freeTimeFk;
+    public FreeTimeModel getFreeTime() {
+        return freeTime;
     }
 
-    public void setFreeTimeFk(Long freeTimeFk) {
-        this.freeTimeFk = freeTimeFk;
+    public void setFreeTime(FreeTimeModel freeTime) {
+        this.freeTime = freeTime;
     }
 }

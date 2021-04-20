@@ -1,19 +1,33 @@
 package br.com.system.teemo.external.database.entity;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(schema = "teemo", name = "USERS")
 public class UsersModel {
-    private long id;
-    private String email;
-    private String password;
-    private String name;
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "teemo.USERS_SEQ")
-    @SequenceGenerator(sequenceName = "teemo.USERS_SEQ", allocationSize = 1, name = "teemo.USERS_SEQ")
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "teemo.USER_SEQ")
+    @SequenceGenerator(sequenceName = "teemo.USER_SEQ", allocationSize = 1, name = "teemo.USER_SEQ")
     @Column(name = "user_id_pk")
+    private Long id;
+
+    @Column(name = "user_email")
+    private String email;
+
+    @Column(name = "user_password")
+    private String password;
+
+    @Column(name = "user_name")
+    private String name;
+
+    @OneToMany(mappedBy = "user")
+    private List<FreeTimeModel> freeTimeModelList;
+
+    @OneToMany(mappedBy = "user")
+    private List<UsersSubjectModel> usersSubjectModels;
+
     public long getId() {
         return id;
     }
@@ -22,7 +36,6 @@ public class UsersModel {
         this.id = id;
     }
 
-    @Column(name = "user_email")
     public String getEmail() {
         return email;
     }
@@ -31,7 +44,6 @@ public class UsersModel {
         this.email = email;
     }
 
-    @Column(name = "user_password")
     public String getPassword() {
         return password;
     }
@@ -40,7 +52,6 @@ public class UsersModel {
         this.password = password;
     }
 
-    @Column(name = "user_name")
     public String getName() {
         return name;
     }
@@ -49,4 +60,11 @@ public class UsersModel {
         this.name = name;
     }
 
+    public List<FreeTimeModel> getFreeTimeModelList() {
+        return freeTimeModelList;
+    }
+
+    public void setFreeTimeModelList(List<FreeTimeModel> freeTimeModelList) {
+        this.freeTimeModelList = freeTimeModelList;
+    }
 }

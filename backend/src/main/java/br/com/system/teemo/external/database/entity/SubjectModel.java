@@ -1,21 +1,27 @@
 package br.com.system.teemo.external.database.entity;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(schema = "teemo", name = "SUBJECT")
 public class SubjectModel {
 
-    private Long id;
-    private String name;
-
-    @JoinColumn(name = "user_id_pk")
-    private Long userIdFk;
-
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "teemo.SUBJECT_SEQ")
     @SequenceGenerator(sequenceName = "teemo.SUBJECT_SEQ", allocationSize = 1, name = "teemo.SUBJECT_SEQ")
     @Column(name = "subject_id_pk")
+    private Long id;
+
+    @Column(name = "subject_name")
+    private String name;
+    
+    @Column(name = "user_id_fk")
+    private Long user;
+
+    @OneToMany(mappedBy = "subject")
+    private List<TimeSubjectModel> timeSubjectModelList;
+
     public Long getId() {
         return id;
     }
@@ -24,20 +30,19 @@ public class SubjectModel {
         this.id = id;
     }
 
-    @Column(name = "subject_name")
-    public String getName() {
+    public String getSubject_name() {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setSubject_name(String subject_name) {
+        this.name = subject_name;
     }
 
-    public Long getUserIdFk() {
-        return userIdFk;
+    public Long getUser() {
+        return user;
     }
 
-    public void setUserIdFk(Long userIdFk) {
-        this.userIdFk = userIdFk;
+    public void setUser(Long user) {
+        this.user = user;
     }
 }

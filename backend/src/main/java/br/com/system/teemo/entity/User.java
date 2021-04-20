@@ -1,10 +1,13 @@
 package br.com.system.teemo.entity;
 
+import java.util.List;
+
 public class User {
-    private long id;
+    private Long id;
     private String email;
     private String password;
     private String name;
+    private List<FreeTime> freeTimeList;
 
     public long getId() {
         return id;
@@ -38,4 +41,11 @@ public class User {
         this.name = name;
     }
 
+    public List<FreeTime> getFreeTimeList() {
+        return freeTimeList;
+    }
+
+    public void setFreeTimeList(List<FreeTime> freeTimeList) {
+        this.freeTimeList = freeTimeList;
+    }
 }

@@ -3,8 +3,8 @@ package br.com.system.teemo.entity;
 public class TimeSubject {
 
     private Long id;
-    private Long subjectIdFk;
-    private Long freeTimeFk;
+    private Subject subject;
+    private FreeTime freeTime;
 
     public Long getId() {
         return id;
@@ -14,19 +14,19 @@ public class TimeSubject {
         this.id = id;
     }
 
-    public Long getSubjectIdFk() {
-        return subjectIdFk;
+    public Subject getSubject() {
+        return subject;
     }
 
-    public void setSubjectIdFk(Long subjectIdFk) {
-        this.subjectIdFk = subjectIdFk;
+    public void setSubject(Subject subject) {
+        this.subject = subject;
     }
 
-    public Long getFreeTimeFk() {
-        return freeTimeFk;
+    public FreeTime getFreeTimeFk() {
+        return freeTime;
     }
 
-    public void setFreeTimeFk(Long freeTimeFk) {
-        this.freeTimeFk = freeTimeFk;
+    public void setFreeTimeFk(FreeTime freeTimeFk) {
+        this.freeTime = freeTimeFk;
     }
 }

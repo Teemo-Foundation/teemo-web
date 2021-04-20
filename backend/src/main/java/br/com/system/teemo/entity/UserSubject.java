@@ -4,8 +4,8 @@ public class UserSubject {
 
     private Long id;
     private Long dificulty;
-    private Long userIdFk;
-    private Long subjectIdFk;
+    private User user;
+    private Subject subject;
 
     public Long getId() {
         return id;
@@ -23,19 +23,19 @@ public class UserSubject {
         this.dificulty = dificulty;
     }
 
-    public Long getUserIdFk() {
-        return userIdFk;
+    public User getUser() {
+        return user;
     }
 
-    public void setUserIdFk(Long userIdFk) {
-        this.userIdFk = userIdFk;
+    public void setUser(User user) {
+        this.user = user;
     }
 
-    public Long getSubjectIdFk() {
-        return subjectIdFk;
+    public Subject getSubject() {
+        return subject;
     }
 
-    public void setSubjectIdFk(Long subjectIdFk) {
-        this.subjectIdFk = subjectIdFk;
+    public void setSubject(Subject subject) {
+        this.subject = subject;
     }
 }

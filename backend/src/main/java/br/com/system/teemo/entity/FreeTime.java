@@ -4,7 +4,7 @@ public class FreeTime {
     private Long Id;
     private Long dayOfWeek;
     private Long freeTimeHour;
-    private Long userIdFk;
+    private User user;
 
     public Long getId() {
         return Id;
@@ -30,11 +30,11 @@ public class FreeTime {
         this.freeTimeHour = freeTimeHour;
     }
 
-    public Long getUserIdFk() {
-        return userIdFk;
+    public User getUser() {
+        return user;
     }
 
-    public void setUserIdFk(Long userIdFk) {
-        this.userIdFk = userIdFk;
+    public void setUser(User user) {
+        this.user = user;
     }
 }
