@@ -7,19 +7,19 @@ import javax.persistence.*;
 public class UsersSubjectModel {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "teemo.USERS_SUBJECT_SEQ")
-    @SequenceGenerator(sequenceName = "teemo.USERS_SUBJECT_EQ", allocationSize = 1, name = "teemo.USERS_SUBJECT_SEQ")
-    @Column(name = "user_id_pk")
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "teemo.USER_SUBJECT_SEQ")
+    @SequenceGenerator(sequenceName = "teemo.USER_SUBJECT_SEQ", allocationSize = 1, name = "teemo.USER_SUBJECT_SEQ")
+    @Column(name = "user_subject_id_pk")
     private Long id;
 
     @Column(name = "dificulty")
     private Long dificulty;
 
-    @JoinColumn(name = "user_id_fk_user_subject")
-    private UsersModel userIdFk;
+    @JoinColumn(name = "user_id_fk")
+    private UsersModel user;
 
-    @JoinColumn(name = "SUBJECT_ID_FK_USER_SUBJECT")
-    private SubjectModel subjectIdFk;
+    @JoinColumn(name = "subject_id_fk")
+    private SubjectModel subject;
 
     public Long getId() {
         return id;
@@ -38,18 +38,18 @@ public class UsersSubjectModel {
     }
 
     public UsersModel getUserIdFk() {
-        return userIdFk;
+        return user;
     }
 
     public void setUserIdFk(UsersModel userIdFk) {
-        this.userIdFk = userIdFk;
+        this.user = userIdFk;
     }
 
     public SubjectModel getSubjectIdFk() {
-        return subjectIdFk;
+        return subject;
     }
 
     public void setSubjectIdFk(SubjectModel subjectIdFk) {
-        this.subjectIdFk = subjectIdFk;
+        this.subject = subjectIdFk;
     }
 }

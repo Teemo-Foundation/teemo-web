@@ -6,18 +6,21 @@ import javax.persistence.*;
 @Table(schema = "teemo", name = "FREE_TIME")
 public class FreeTimeModel {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "teemo.FREE_TIME_SEQ")
+    @SequenceGenerator(sequenceName = "teemo.FREE_TIME_SEQ", allocationSize = 1, name = "teemo.FREE_TIME_SEQ")
+    @Column(name = "free_time_id_pk")
     private Long id;
+
+    @Column(name = "day_of_week")
     private Long dayOfWeek;
+
+    @Column(name = "free_time_hour")
     private Long freeTimeHour;
 
-    @JoinColumn(name = "user_id_pk")
-    private Long userIdFk;
+    @JoinColumn(name = "user_id_fk")
+    private UsersModel user;
 
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "teemo.FREETIME_SEQ")
-    @SequenceGenerator(sequenceName = "teemo.FREETIME_SEQ", allocationSize = 1, name = "teemo.FREETIME_SEQ")
-    @Column(name = "free_time_id_pk")
     public Long getId() {
         return id;
     }
@@ -26,7 +29,6 @@ public class FreeTimeModel {
         this.id = id;
     }
 
-    @Column(name = "day_of_week")
     public Long getDayOfWeek() {
         return dayOfWeek;
     }
@@ -35,7 +37,6 @@ public class FreeTimeModel {
         this.dayOfWeek = dayOfWeek;
     }
 
-    @Column(name = "free_time_hour")
     public Long getFreeTimeHour() {
         return freeTimeHour;
     }
@@ -44,11 +45,11 @@ public class FreeTimeModel {
         this.freeTimeHour = freeTimeHour;
     }
 
-    public Long getUserIdFk() {
-        return userIdFk;
+    public UsersModel getUser() {
+        return user;
     }
 
-    public void setUserIdFk(Long userIdFk) {
-        this.userIdFk = userIdFk;
+    public void setUser(UsersModel user) {
+        this.user = user;
     }
 }

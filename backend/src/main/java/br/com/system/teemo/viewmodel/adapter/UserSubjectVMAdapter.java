@@ -15,8 +15,8 @@ public class UserSubjectVMAdapter {
             final UserSubjectVM viewModel = new UserSubjectVM();
             viewModel.setId(item.getId());
             viewModel.setDificulty(item.getDificulty());
-            viewModel.setSubjectIdFk(SubjectVMAdapter.entityToViewModel(item.getSubjectIdFk()));
-            viewModel.setUserIdFk(UserVMAdapter.entityToViewModel(item.getUserIdFk()));
+            viewModel.setSubjectVM(SubjectVMAdapter.entityToViewModel(item.getSubject()));
+            viewModel.setUserVM(UserVMAdapter.entityToViewModel(item.getUser()));
 
             userSubjectVM.add(viewModel);
         }

@@ -4,8 +4,8 @@ public class UserSubjectVM {
 
     private Long id;
     private Long dificulty;
-    private UserVM userIdFk;
-    private SubjectVM subjectIdFk;
+    private UserVM userVM;
+    private SubjectVM subjectVM;
 
     public Long getId() {
         return id;
@@ -23,19 +23,19 @@ public class UserSubjectVM {
         this.dificulty = dificulty;
     }
 
-    public UserVM getUserIdFk() {
-        return userIdFk;
+    public UserVM getUserVM() {
+        return userVM;
     }
 
-    public void setUserIdFk(UserVM userIdFk) {
-        this.userIdFk = userIdFk;
+    public void setUserVM(UserVM userVM) {
+        this.userVM = userVM;
     }
 
-    public SubjectVM getSubjectIdFk() {
-        return subjectIdFk;
+    public SubjectVM getSubjectVM() {
+        return subjectVM;
     }
 
-    public void setSubjectIdFk(SubjectVM subjectIdFk) {
-        this.subjectIdFk = subjectIdFk;
+    public void setSubjectVM(SubjectVM subjectVM) {
+        this.subjectVM = subjectVM;
     }
 }

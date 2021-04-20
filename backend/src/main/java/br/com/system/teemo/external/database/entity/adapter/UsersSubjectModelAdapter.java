@@ -15,8 +15,8 @@ public class UsersSubjectModelAdapter {
             final UserSubject entity = new UserSubject();
             entity.setId(item.getId());
             entity.setDificulty(item.getDificulty());
-            entity.setSubjectIdFk(SubjectModelAdapter.modelToEntity(item.getSubjectIdFk()));
-            entity.setUserIdFk(UserModelAdapter.modelToEntity(item.getUserIdFk()));
+            entity.setSubject(SubjectModelAdapter.modelToEntity(item.getSubjectIdFk()));
+            entity.setUser(UserModelAdapter.modelToEntity(item.getUserIdFk()));
         }
         return userSubjectList;
     }
@@ -25,8 +25,8 @@ public class UsersSubjectModelAdapter {
         final UsersSubjectModel model = new UsersSubjectModel();
         model.setId(entity.getId());
         model.setDificulty(entity.getDificulty());
-        model.setSubjectIdFk(SubjectModelAdapter.entityToModel(entity.getSubjectIdFk()));
-        model.setUserIdFk(UserModelAdapter.entityToModel(entity.getUserIdFk()));
+        model.setSubjectIdFk(SubjectModelAdapter.entityToModel(entity.getSubject()));
+        model.setUserIdFk(UserModelAdapter.entityToModel(entity.getUser()));
 
         return model;
     }

@@ -11,8 +11,8 @@ public class UsersModel {
     private String name;
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "teemo.USERS_SEQ")
-    @SequenceGenerator(sequenceName = "teemo.USERS_SEQ", allocationSize = 1, name = "teemo.USERS_SEQ")
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "teemo.USER_SEQ")
+    @SequenceGenerator(sequenceName = "teemo.USER_SEQ", allocationSize = 1, name = "teemo.USER_SEQ")
     @Column(name = "user_id_pk")
     public long getId() {
         return id;
