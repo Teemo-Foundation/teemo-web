@@ -22,12 +22,13 @@ public class UserSubjectController {
     @Autowired
     private GetUserByName getUserByName;
 
-    @GetMapping("/{name}")
+    @CrossOrigin(origins = "http://localhost:4200")
+    @GetMapping("/{id}")
     @ResponseStatus(HttpStatus.OK)
-    public ResponseEntity getUserSubject(@PathVariable final String name){
+    public ResponseEntity getUserSubject(@PathVariable final Long id){
         try {
-            final User user = getUserByName.execute(name);
-            final List<UserSubject> userSubject = getUserSubject.execute(1L);
+//            final User user = getUserByName.execute(name);
+            final List<UserSubject> userSubject = getUserSubject.execute(id);
             return ResponseEntity.ok().body(userSubject);
         }catch (Exception err){
             return ResponseEntity.badRequest().body(err.getMessage());

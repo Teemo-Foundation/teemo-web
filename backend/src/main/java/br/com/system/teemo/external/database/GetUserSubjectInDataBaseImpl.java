@@ -19,7 +19,7 @@ public class GetUserSubjectInDataBaseImpl implements GetSubjectByUserIdInDataBas
 
     @Override
     public List<UserSubject> execute(Long id) {
-        List<UsersSubjectModel> usersSubjectModelList = userSubjectRepository.findSubjectByUserIdFk(id);
+        List<UsersSubjectModel> usersSubjectModelList = userSubjectRepository.findSubjectByUserId(id);
         return UsersSubjectModelAdapter.modelToEntity(usersSubjectModelList);
     }
 }

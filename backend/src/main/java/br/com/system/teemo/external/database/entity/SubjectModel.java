@@ -1,6 +1,7 @@
 package br.com.system.teemo.external.database.entity;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(schema = "teemo", name = "SUBJECT")
@@ -13,10 +14,13 @@ public class SubjectModel {
     private Long id;
 
     @Column(name = "subject_name")
-    private String subject_name;
+    private String name;
+    
+    @Column(name = "user_id_fk")
+    private Long user;
 
-    @JoinColumn(name = "user_id_fk")
-    private UsersModel user;
+    @OneToMany(mappedBy = "subject")
+    private List<TimeSubjectModel> timeSubjectModelList;
 
     public Long getId() {
         return id;
@@ -27,18 +31,18 @@ public class SubjectModel {
     }
 
     public String getSubject_name() {
-        return subject_name;
+        return name;
     }
 
     public void setSubject_name(String subject_name) {
-        this.subject_name = subject_name;
+        this.name = subject_name;
     }
 
-    public UsersModel getUser() {
+    public Long getUser() {
         return user;
     }
 
-    public void setUser(UsersModel user) {
+    public void setUser(Long user) {
         this.user = user;
     }
 }

@@ -4,7 +4,7 @@ public class SubjectVM {
 
     private Long id;
     private String subjectName;
-    private UserVM userVM;
+    private Long userVM;
 
     public Long getId() {
         return id;
@@ -22,11 +22,11 @@ public class SubjectVM {
         this.subjectName = subjectName;
     }
 
-    public UserVM getUserVM() {
+    public Long getUserVM() {
         return userVM;
     }
 
-    public void setUserVM(UserVM userVM) {
+    public void setUserVM(Long userVM) {
         this.userVM = userVM;
     }
 

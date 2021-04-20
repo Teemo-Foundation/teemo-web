@@ -9,7 +9,7 @@ import java.util.List;
 public class UsersSubjectModelAdapter {
     public static List<UserSubject> modelToEntity (final List<UsersSubjectModel> modelList){
 
-        List<UserSubject> userSubjectList = new ArrayList<>();
+        List<UserSubject> entityList = new ArrayList<>();
 
         for(UsersSubjectModel item : modelList) {
             final UserSubject entity = new UserSubject();
@@ -17,18 +17,26 @@ public class UsersSubjectModelAdapter {
             entity.setDificulty(item.getDificulty());
             entity.setSubject(SubjectModelAdapter.modelToEntity(item.getSubjectIdFk()));
             entity.setUser(UserModelAdapter.modelToEntity(item.getUserIdFk()));
+
+            entityList.add(entity);
         }
-        return userSubjectList;
+        return entityList;
     }
 
-    public static UsersSubjectModel entityToModel (final UserSubject entity){
-        final UsersSubjectModel model = new UsersSubjectModel();
-        model.setId(entity.getId());
-        model.setDificulty(entity.getDificulty());
-        model.setSubjectIdFk(SubjectModelAdapter.entityToModel(entity.getSubject()));
-        model.setUserIdFk(UserModelAdapter.entityToModel(entity.getUser()));
+    public static List<UsersSubjectModel> entityToModel (final List<UserSubject> entityList){
+        List<UsersSubjectModel> modelList = new ArrayList<>();
 
-        return model;
+        for (UserSubject item : entityList) {
+            final UsersSubjectModel model = new UsersSubjectModel();
+            model.setId(item.getId());
+            model.setDificulty(item.getDificulty());
+            model.setSubjectIdFk(SubjectModelAdapter.entityToModel(item.getSubject()));
+            model.setUserIdFk(UserModelAdapter.entityToModel(item.getUser()));
+
+            modelList.add(model);
+        }
+
+        return modelList;
     }
 }
 

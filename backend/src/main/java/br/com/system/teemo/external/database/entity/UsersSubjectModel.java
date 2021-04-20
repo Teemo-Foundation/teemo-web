@@ -15,9 +15,11 @@ public class UsersSubjectModel {
     @Column(name = "dificulty")
     private Long dificulty;
 
+    @ManyToOne
     @JoinColumn(name = "user_id_fk")
     private UsersModel user;
 
+    @ManyToOne
     @JoinColumn(name = "subject_id_fk")
     private SubjectModel subject;
 

@@ -3,7 +3,7 @@ package br.com.system.teemo.entity;
 public class Subject {
     private Long id;
     private String subjectName;
-    private User user;
+    private Long user;
 
     public Long getId() {
         return id;
@@ -21,11 +21,11 @@ public class Subject {
         this.subjectName = subjectName;
     }
 
-    public User getUser() {
+    public Long getUser() {
         return user;
     }
 
-    public void setUser(User user) {
+    public void setUser(Long user) {
         this.user = user;
     }
 }

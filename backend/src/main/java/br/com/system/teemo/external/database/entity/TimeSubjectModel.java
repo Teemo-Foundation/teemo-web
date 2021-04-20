@@ -1,6 +1,7 @@
 package br.com.system.teemo.external.database.entity;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(schema = "teemo", name = "TIME_SUBJECT")
@@ -12,9 +13,11 @@ public class TimeSubjectModel {
     @Column(name = "time_subject_id_pk")
     private Long id;
 
+    @ManyToOne
     @JoinColumn(name = "subject_id_fk")
     private SubjectModel subject;
 
+    @OneToOne
     @JoinColumn(name = "free_time_id_fk")
     private FreeTimeModel freeTime;
 
