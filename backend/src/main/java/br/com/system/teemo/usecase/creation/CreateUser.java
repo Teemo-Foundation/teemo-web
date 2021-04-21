@@ -1,7 +1,8 @@
-package br.com.system.teemo.usecase;
+package br.com.system.teemo.usecase.creation;
 
 import br.com.system.teemo.entity.User;
 import br.com.system.teemo.external.SaveUserInDataBase;
+import br.com.system.teemo.usecase.validation.EmailDoesNotExists;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

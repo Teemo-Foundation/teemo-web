@@ -1,6 +1,7 @@
 package br.com.system.teemo.endpoint.rest;
 
 import br.com.system.teemo.entity.Subject;
+import br.com.system.teemo.usecase.CreateSubject;
 import br.com.system.teemo.usecase.GetAllSubjects;
 import br.com.system.teemo.usecase.GetSubjectByName;
 import br.com.system.teemo.viewmodel.SubjectVM;
@@ -24,6 +25,10 @@ public class SubjectController {
     @Autowired
     GetAllSubjects getAllSubjects;
 
+    @Autowired
+    private CreateSubject createSubject;
+
+    @CrossOrigin(origins = "http://localhost:4200")
     @GetMapping("/{name}")
     @ResponseStatus(HttpStatus.OK)
     public ResponseEntity getSubjectByName(@PathVariable final String name){
@@ -35,6 +40,7 @@ public class SubjectController {
         }
     }
 
+    @CrossOrigin(origins = "http://localhost:4200")
     @GetMapping
     @ResponseStatus(HttpStatus.OK)
     public ResponseEntity<List<SubjectVM>> getAllSubjects() {
@@ -49,6 +55,19 @@ public class SubjectController {
             return ResponseEntity.status(HttpStatus.OK).body(subjectVMList);
         }catch (Exception err) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(null);
+        }
+    }
+
+    @CrossOrigin(origins = "http://localhost:4200")
+    @PostMapping
+    @ResponseStatus(HttpStatus.CREATED)
+    public ResponseEntity<SubjectVM> createSubject(@RequestBody final SubjectVM subjectVM) {
+        try {
+            final Subject subject = createSubject.execute(SubjectVMAdapter.viewModelToEntity(subjectVM));
+            final SubjectVM result = SubjectVMAdapter.entityToViewModel(subject);
+            return ResponseEntity.status(HttpStatus.CREATED).body(result);
+        }catch (Exception err) {
+            return ResponseEntity.status(HttpStatus.NOT_ACCEPTABLE).body(subjectVM);
         }
     }
 
