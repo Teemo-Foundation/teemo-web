@@ -1,4 +1,4 @@
-package br.com.system.teemo.usecase;
+package br.com.system.teemo.usecase.validation;
 
 import br.com.system.teemo.entity.User;
 import br.com.system.teemo.external.database.GetUserByEmailInDataBaseImpl;

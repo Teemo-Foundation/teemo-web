@@ -1,9 +1,14 @@
 package br.com.system.teemo.endpoint.rest;
 
+import br.com.system.teemo.entity.Subject;
 import br.com.system.teemo.entity.User;
 import br.com.system.teemo.entity.UserSubject;
+import br.com.system.teemo.usecase.CreateSubject;
 import br.com.system.teemo.usecase.GetUserByName;
 import br.com.system.teemo.usecase.GetUserSubject;
+import br.com.system.teemo.viewmodel.SubjectVM;
+import br.com.system.teemo.viewmodel.UserVM;
+import br.com.system.teemo.viewmodel.adapter.SubjectVMAdapter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -27,7 +32,6 @@ public class UserSubjectController {
     @ResponseStatus(HttpStatus.OK)
     public ResponseEntity getUserSubject(@PathVariable final Long id){
         try {
-//            final User user = getUserByName.execute(name);
             final List<UserSubject> userSubject = getUserSubject.execute(id);
             return ResponseEntity.ok().body(userSubject);
         }catch (Exception err){

@@ -1,7 +1,7 @@
 package br.com.system.teemo.endpoint.rest;
 
 import br.com.system.teemo.entity.User;
-import br.com.system.teemo.usecase.CreateUser;
+import br.com.system.teemo.usecase.creation.CreateUser;
 import br.com.system.teemo.usecase.GetUserByName;
 import br.com.system.teemo.viewmodel.UserVM;
 import br.com.system.teemo.viewmodel.adapter.UserVMAdapter;
@@ -21,6 +21,7 @@ public class UserController {
     @Autowired
     private CreateUser createUser;
 
+    @CrossOrigin(origins = "http://localhost:4200")
     @GetMapping("/{name}")
     @ResponseStatus(HttpStatus.OK)
     public ResponseEntity getUserByName(@PathVariable final String name){
@@ -32,6 +33,7 @@ public class UserController {
         }
     }
 
+    @CrossOrigin(origins = "http://localhost:4200")
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public ResponseEntity<UserVM> createUser(@RequestBody final UserVM userVM){
