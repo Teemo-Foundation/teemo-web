@@ -1,4 +1,4 @@
-package br.com.system.teemo.usecase;
+package br.com.system.teemo.usecase.creation;
 
 import br.com.system.teemo.entity.Subject;
 import br.com.system.teemo.external.database.SaveSubjectInDataBaseImpl;

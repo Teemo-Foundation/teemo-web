@@ -1,17 +1,17 @@
 package br.com.system.teemo.entity;
 
 public class FreeTime {
-    private Long Id;
+    private Long id;
     private Long dayOfWeek;
     private Long freeTimeHour;
-    private User user;
+    private Long user;
 
     public Long getId() {
-        return Id;
+        return id;
     }
 
     public void setId(Long id) {
-        Id = id;
+        this.id = id;
     }
 
     public Long getDayOfWeek() {
@@ -30,11 +30,11 @@ public class FreeTime {
         this.freeTimeHour = freeTimeHour;
     }
 
-    public User getUser() {
+    public Long getUser() {
         return user;
     }
 
-    public void setUser(User user) {
+    public void setUser(Long user) {
         this.user = user;
     }
 }
