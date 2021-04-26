@@ -23,9 +23,6 @@ public class UsersModel {
     private String name;
 
     @OneToMany(mappedBy = "user")
-    private List<FreeTimeModel> freeTimeModelList;
-
-    @OneToMany(mappedBy = "user")
     private List<UsersSubjectModel> usersSubjectModels;
 
     public long getId() {
@@ -60,11 +57,4 @@ public class UsersModel {
         this.name = name;
     }
 
-    public List<FreeTimeModel> getFreeTimeModelList() {
-        return freeTimeModelList;
-    }
-
-    public void setFreeTimeModelList(List<FreeTimeModel> freeTimeModelList) {
-        this.freeTimeModelList = freeTimeModelList;
-    }
 }
