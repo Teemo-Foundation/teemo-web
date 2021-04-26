@@ -22,8 +22,8 @@ public class UsersModel {
     @Column(name = "user_name")
     private String name;
 
-//    @OneToMany(mappedBy = "user")
-//    private List<FreeTimeModel> freeTimeModelList;
+    @OneToMany(mappedBy = "user")
+    private List<FreeTimeModel> freeTimeModelList;
 
     @OneToMany(mappedBy = "user")
     private List<UsersSubjectModel> usersSubjectModels;
@@ -60,4 +60,11 @@ public class UsersModel {
         this.name = name;
     }
 
+    public List<FreeTimeModel> getFreeTimeModelList() {
+        return freeTimeModelList;
+    }
+
+    public void setFreeTimeModelList(List<FreeTimeModel> freeTimeModelList) {
+        this.freeTimeModelList = freeTimeModelList;
+    }
 }

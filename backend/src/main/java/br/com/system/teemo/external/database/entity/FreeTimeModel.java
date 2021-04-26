@@ -19,8 +19,9 @@ public class FreeTimeModel {
     @Column(name = "free_time_hour")
     private Long freeTimeHour;
 
-    @Column(name = "user_id_fk")
-    private Long user;
+    @ManyToOne
+    @JoinColumn(name = "user_id_fk")
+    private UsersModel user;
 
     public Long getId() {
         return id;
@@ -46,11 +47,11 @@ public class FreeTimeModel {
         this.freeTimeHour = freeTimeHour;
     }
 
-    public Long getUser() {
+    public UsersModel getUser() {
         return user;
     }
 
-    public void setUser(Long user) {
+    public void setUser(UsersModel user) {
         this.user = user;
     }
 }
