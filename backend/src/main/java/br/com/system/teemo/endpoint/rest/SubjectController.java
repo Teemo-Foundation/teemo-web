@@ -3,6 +3,7 @@ package br.com.system.teemo.endpoint.rest;
 import br.com.system.teemo.entity.Subject;
 import br.com.system.teemo.usecase.GetAllSubjects;
 import br.com.system.teemo.usecase.GetSubjectByName;
+import br.com.system.teemo.usecase.creation.CreateSubject;
 import br.com.system.teemo.viewmodel.SubjectVM;
 import br.com.system.teemo.viewmodel.adapter.SubjectVMAdapter;
 import org.springframework.beans.factory.annotation.Autowired;
