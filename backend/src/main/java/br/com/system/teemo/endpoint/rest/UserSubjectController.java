@@ -1,7 +1,5 @@
 package br.com.system.teemo.endpoint.rest;
 
-import br.com.system.teemo.entity.Subject;
-import br.com.system.teemo.entity.User;
 import br.com.system.teemo.entity.UserSubject;
 import br.com.system.teemo.usecase.CreateSubject;
 import br.com.system.teemo.usecase.GetUserByName;

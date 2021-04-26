@@ -10,7 +10,7 @@ public class FreeTimeModelAdapter {
         entity.setId(model.getId());
         entity.setDayOfWeek(model.getDayOfWeek());
         entity.setFreeTimeHour(model.getFreeTimeHour());
-        entity.setUser(UserModelAdapter.modelToEntity(model.getUser()));
+        entity.setUser(model.getUser());
         return entity;
     }
 
@@ -19,7 +19,7 @@ public class FreeTimeModelAdapter {
         model.setId(entity.getId());
         model.setDayOfWeek(entity.getDayOfWeek());
         model.setFreeTimeHour(entity.getFreeTimeHour());
-        model.setUser(UserModelAdapter.entityToModel(entity.getUser()));
+        model.setUser(entity.getUser());
         return model;
     }
 
